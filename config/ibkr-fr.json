@@ -1,0 +1,13 @@
+{
+  "broker": "IBKR",
+  "residence": "FR",
+  "account_exists": false,
+  "capital_eur": "10",
+  "max_total_loss_eur": "1",
+  "requested_leverage": 30,
+  "short_allowed": false,
+  "live_enabled": false,
+  "transfers_enabled": false,
+  "api_host": "127.0.0.1",
+  "api_read_only": true
+}

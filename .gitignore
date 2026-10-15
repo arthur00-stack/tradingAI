@@ -1,5 +1,32 @@
-# Python
+.venv/
 __pycache__/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+var/
+*.pt
+
+.env
+.env.*
+!.env.example
+secrets/
+*.pem
+*.key
+*.sqlite3
+*.sqlite3-*
+
+dist/
+build/
+
+# Local tooling and unrelated personal files
+.agents/
+.aws/
+.codex/
+pc06_complete.ipynb
+prompts_kling/
+
+# Existing repository exclusions
 *.py[cod]
 *.pyo
 *.pyd
@@ -7,22 +34,11 @@ __pycache__/
 env/
 venv/
 ENV/
-
-# Jupyter
 .ipynb_checkpoints
-
-# PyCharm
 .idea/
-
-# VS Code
 .vscode/
-
-# Data
 *.csv
 *.pth
-*.pt
 *.h5
-
-# OS
 .DS_Store
 Thumbs.db

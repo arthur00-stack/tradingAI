@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "autotrader-foundation"
+version = "0.2.1"
+description = "Recoverable paper trading with recurrent A2C and independent risk controls"
+requires-python = ">=3.12"
+dependencies = ["pydantic>=2.10,<3", "numpy>=2,<3", "torch>=2.6,<3", "gymnasium>=1,<2", "PyQt6>=6.7,<7", "pyqtgraph>=0.13,<1", "websockets>=14,<17"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<10", "mypy>=1.14,<2", "ruff>=0.11,<1"]
+
+[project.scripts]
+autotrader = "autotrader.main:main"
+autotrader-train = "autotrader.ml.train:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+
+[tool.mypy]
+python_version = "3.14"
+strict = true
+ignore_missing_imports = true
+# PyTorch exposes some untyped public methods (Categorical, Tensor.backward).
+untyped_calls_exclude = ["torch"]
+
+[tool.ruff]
+line-length = 110
